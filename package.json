@@ -1,5 +1,5 @@
 {
-  "name": "pubsub",
+  "name": "@likun./pubsub",
   "version": "1.0.0",
   "description": "A lib of publish-subscribe design pattern.",
   "main": "dist/pubsub.js",

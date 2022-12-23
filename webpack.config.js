@@ -7,7 +7,7 @@ module.exports = (env) => {
         entry: './src/index.ts',
         output: {
             path: path.resolve(__dirname, 'dist'),
-            filename: `${name}.js`,
+            filename: `${name.split('/').pop()}.js`,
             library: {
                 name: 'PubSub',
                 type: 'umd'
