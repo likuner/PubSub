@@ -1,7 +1,7 @@
 export type EventType = unknown
 
 // 发布订阅
-export default class PubSub {
+export class PubSub {
     // 订阅记录
     private events: Map<EventType, Function[]> = new Map()
 

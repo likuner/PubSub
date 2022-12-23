@@ -1,5 +1,4 @@
 const path = require('path')
-const { name } = require('./package.json')
 
 module.exports = (env) => {
     const { prod } = env
@@ -7,7 +6,7 @@ module.exports = (env) => {
         entry: './src/index.ts',
         output: {
             path: path.resolve(__dirname, 'dist'),
-            filename: `${name.split('/').pop()}.js`,
+            filename: 'index.min.js',
             library: {
                 name: 'PubSub',
                 type: 'umd'
