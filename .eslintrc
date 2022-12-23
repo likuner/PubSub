@@ -16,6 +16,11 @@
     "plugins": [
         "@typescript-eslint"
     ],
+    "ignorePatterns": [
+        "dist",
+        "build",
+        "webpack.*"
+    ],
     "rules": {
         "quotes": ["error", "single"],
         "semi": ["error", "never"],

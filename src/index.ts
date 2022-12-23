@@ -68,7 +68,3 @@ export default class PubSub {
         this.onceEvents.clear()
     }
 }
-
-PubSub.getInstance().on('sdf', () => {
-    return
-})
