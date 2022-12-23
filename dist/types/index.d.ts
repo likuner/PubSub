@@ -1,5 +1,5 @@
 export type EventType = unknown;
-export default class PubSub {
+export declare class PubSub {
     private events;
     private onceEvents;
     private static instance;

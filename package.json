@@ -1,6 +1,6 @@
 {
   "name": "@likun./pubsub",
-  "version": "1.0.0-beta5",
+  "version": "1.0.0-beta6",
   "description": "A lib for publish-subscribe design pattern.",
   "keywords": ["pubsub", "publish-subscribe", "events", "emit", "design pattern"],
   "main": "dist/index.min.js",
