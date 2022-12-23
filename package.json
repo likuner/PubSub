@@ -2,7 +2,7 @@
   "name": "pubsub",
   "version": "1.0.0",
   "description": "A lib of publish-subscribe design pattern.",
-  "main": "dist/index.js",
+  "main": "dist/pubsub.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
     "build": "webpack --env prod --config webpack.config.js --progress",
