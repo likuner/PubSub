@@ -1,11 +1,9 @@
 export type EventType = unknown
 
-// 发布订阅
 export class PubSub {
-  // 订阅记录
+
   private events: Map<EventType, Function[]> = new Map()
 
-  // 只订阅一次的记录
   private onceEvents: Map<EventType, Function[]> = new Map()
 
   private static instance: PubSub | null = null
@@ -17,7 +15,6 @@ export class PubSub {
     return PubSub.instance
   }
 
-  // 订阅
   on(event: EventType, callback: Function) {
     if (!this.events.has(event)) {
       this.events.set(event, [])
@@ -25,7 +22,6 @@ export class PubSub {
     this.events.get(event)!.push(callback)
   }
 
-  // 取消订阅
   off(event: EventType, callback: Function) {
     const listeners = this.events.get(event)
     if (listeners?.length) {
@@ -37,7 +33,6 @@ export class PubSub {
     }
   }
 
-  // 只订阅一次
   once(event: EventType, callback: Function) {
     if (!this.onceEvents.has(event)) {
       this.onceEvents.set(event, [])
@@ -45,7 +40,6 @@ export class PubSub {
     this.onceEvents.get(event)!.push(callback)
   }
 
-  // 发布
   emit(event: EventType, ...args: any[]) {
     Promise.resolve().then(() => {
       const listeners = this.events.get(event) || []
@@ -62,7 +56,6 @@ export class PubSub {
     })
   }
 
-  // 清空订阅
   clear() {
     this.events.clear()
     this.onceEvents.clear()
