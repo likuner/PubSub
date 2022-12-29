@@ -1,5 +1,7 @@
 const path = require('path')
-const { name } = require('./package.json')
+const webpack = require('webpack')
+const TerserPlugin = require('terser-webpack-plugin')
+const { name, version } = require('./package.json')
 
 module.exports = (env) => {
   const { prod } = env
@@ -31,6 +33,19 @@ module.exports = (env) => {
           ]
         }
       ]
-    }
+    },
+    optimization: {
+      minimize: true,
+      minimizer: [
+        new TerserPlugin({
+          extractComments: false
+        })
+      ]
+    },
+    plugins: [
+      new webpack.BannerPlugin({
+        banner: `${name}\nversion: ${version}\n${new Date().toLocaleString()}`
+      })
+    ]
   }
 }
