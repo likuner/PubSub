@@ -44,7 +44,8 @@ module.exports = (env) => {
     },
     plugins: [
       new webpack.BannerPlugin({
-        banner: `${name}\nversion: ${version}\n${new Date().toLocaleString()}`
+        banner: `${name}\nversion: ${version}\n${new Date().toLocaleString()}`,
+        entryOnly: true
       })
     ]
   }
